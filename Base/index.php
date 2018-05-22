@@ -39,10 +39,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="add-meme.php">Adicionar Meme</a>
+              <a class="nav-link" href="add-meme.php">Postar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.php">About</a>
+              <a class="nav-link" href="about.php">Sobre</a>
             </li>
           </ul>
         </div>
@@ -57,27 +57,60 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
 
-          <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
+          <h1 class="my-4">Vai descendo
+            <small> devagarinho</small>
           </h1>
         
         <?php
-            $lista = ["fsdfsd", "gsgsdfg", "gsgsdgs"];
+            $post = "<div class='card mb-4'>
+              <img class='card-img-top' src='[POST-IMAGE]' alt='Card image cap'>
+              <div class='card-body'>
+                <h2 class='card-title'>[POST-TITLE]</h2>
+                <p class='card-text'>[POST-MESSAGE]</p>
+              </div>
+              <div class='card-footer text-muted'>
+                [POST-DATE]
+              </div>
+            </div>";
+            $lista = [
+                    (object)[
+                    'title' => 'Post da coruja ',
+                    'date' => "11/12/2017",
+                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Detraxit consequat et quo num tendi nada.',
+                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
+                    ],
+                    (object)[
+                    'title' => 'Segundo post top',
+                    'date' => "11/12/2017",
+                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Suco de cevadiss deixa as pessoas mais interessantis. Quem manda na minha terra sou euzis! Viva Forevis aptent taciti sociosqu ad litora torquent.',
+                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
+                    ],
+                    (object)[
+                    'title' => 'fsdf gdsdg ',
+                    'date' => "11/12/2017",
+                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Manduma pindureta quium dia nois paga. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.',
+                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
+                    ],
+                    (object)[
+                    'title' => 'fsdf gdsdg ',
+                    'date' => "11/12/2017",
+                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Manduma pindureta quium dia nois paga.',
+                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
+                    ],
+                    (object)[
+                    'title' => 'Ultimo Post',
+                    'date' => "11/12/2017",
+                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Mé faiz elementum girarzis, nisi eros vermeio.',
+                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
+                    ],
+                ];
             foreach($lista as $index => $item){
-                echo str_replace("[CONTENT]", $item, "
-                <!-- Blog Post -->
-                <div class='card mb-4'>
-                  <img class='card-img-top' src='http://placehold.it/750x300' alt='Card image cap'>
-                  <div class='card-body'>
-                    <h2 class='card-title'>Post Title</h2>
-                    <p class='card-text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                    <a href='#' class='btn btn-primary'>Read More &rarr;</a>
-                  </div>
-                  <div class='card-footer text-muted'>
-                    Posted on January 1, 2017 by
-                    <a href='#'>Start Bootstrap</a>
-                  </div>
-                </div>");
+                $currentPost = $post;
+                $currentPost = str_replace("[POST-IMAGE]", $item->image, $currentPost);
+                $currentPost = str_replace("[POST-TITLE]", $item->title, $currentPost);
+                $currentPost = str_replace("[POST-MESSAGE]", $item->message, $currentPost);
+                $currentPost = str_replace("[POST-DATE]", $item->date, $currentPost);
+                echo $currentPost;
             }
         ?>
 
@@ -98,12 +131,12 @@
 
           <!-- Search Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Search</h5>
+            <h5 class="card-header">Buscar</h5>
             <div class="card-body">
               <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control" placeholder="Escreve aí...">
                 <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Go!</button>
+                  <button class="btn btn-secondary" type="button">Bora!</button>
                 </span>
               </div>
             </div>
@@ -111,12 +144,11 @@
 
           <!-- Side Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Side Widget</h5>
+            <h5 class="card-header">É Facão</h5>
             <div class="card-body">
-              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+              Blog de memes da Engenharia de Computação.
             </div>
           </div>
-
         </div>
 
       </div>
