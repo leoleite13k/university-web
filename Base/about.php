@@ -34,15 +34,18 @@
           <li class="nav-item">
             <a class="nav-link" href="add-meme.php">Postar</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="head-football.php">Head Football</a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="about.php">Sobre</a>
+            <a class="nav-link" href="#">Sobre</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-
+  
   </body>
 
 </html>

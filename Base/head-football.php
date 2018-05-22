@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
 <title>
-    Quero ver! - Postar
+    Quero ver! - Head Football
 </title>
   <head>
     <meta charset="UTF-8">
@@ -31,11 +31,11 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="add-meme.php">Postar</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="head-football.php">Head Football</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Head Football</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.php">Sobre</a>
@@ -44,31 +44,7 @@
         </div>
       </div>
     </nav>
-
-      <div class="container">
-          <div class="row">
-              <div class="col-mid-4">
-                  <form action="#" method="post" class="form">
-                  <div class="get-in-touch">
-                      <h3 class="text-center">
-                          Get in Touch</h3>
-                      <div class="form-group">
-                          <input type="text" class="form-control" id="title" placeholder="Titulo" required/>
-                      </div>
-                      <div class="form-group">
-                        <textarea class="form-control" id="message" rows="3" placeholder="Mensagem" required></textarea>
-                      </div>
-                      <div class="form-group">
-                          <input type="file" class="form-control" id="image" placeholder="Imagem" required/>
-                      </div>
-                      <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Send it!</a>
-                  </div>
-                  </form>
-              </div>
-          </div>
-      </div>
-     
-
+    <iframe src="https://www.silvergames.com/en/sports-heads-football-championship/iframe" width="100%" height="540" style="margin:0;padding:0;border:0"></iframe>
   </body>
 
 </html>
