@@ -44,7 +44,9 @@
         </div>
       </div>
     </nav>
-    <iframe src="https://www.silvergames.com/en/sports-heads-football-championship/iframe" width="100%" height="540" style="margin:0;padding:0;border:0"></iframe>
+    <div class="head-football-content">
+        <iframe src="https://www.silvergames.com/en/sports-heads-football-championship/iframe" width="680" height="540" style="margin:0;padding:0;border:0"></iframe>
+    </div>
   </body>
 
 </html>

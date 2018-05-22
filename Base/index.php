@@ -118,14 +118,14 @@
         ?>
 
           <!-- Pagination -->
-          <ul class="pagination justify-content-center mb-4">
+          <!-- <ul class="pagination justify-content-center mb-4">
             <li class="page-item">
               <a class="page-link" href="#">&larr; Older</a>
             </li>
             <li class="page-item disabled">
               <a class="page-link" href="#">Newer &rarr;</a>
             </li>
-          </ul>
+          </ul> -->
 
         </div>
 
@@ -161,7 +161,7 @@
     <!-- /.container -->
     
     <footer data-spy="scroll" data-target="#menu_navbar" data-offset="0">
-        <p id="rodape" style="text-align: center;">Criado por mim</p>
+        <p id="rodape" style="text-align: center;"></p>
     </footer>
 </body>
 
