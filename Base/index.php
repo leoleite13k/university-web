@@ -64,17 +64,9 @@
           </h1>
         
         <?php
-            $post = "
-            <div class='card mb-4'>
-              <h2 class='card-title'>[POST-TITLE]</h2>
-              <img class='card-img-top' src='[POST-IMAGE]' alt='Card image cap'>
-              <div class='card-body'>
-                <p class='card-text'>[POST-MESSAGE]</p>
-              </div>
-              <div class='card-footer text-muted'>
-                [POST-DATE]
-              </div>
-            </div>";
+          /***************************************************************************************************/
+          /* JAPONEIS é aqui que vc vai mexer, pegar a carga do banco e transformar nesses objetos da $lista */
+          /***************************************************************************************************/
             $lista = [
                     (object)[
                     'title' => 'Post da coruja ',
@@ -107,6 +99,18 @@
                     'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
                     ],
                 ];
+
+            $post = "
+            <div class='card mb-4'>
+              <h2 class='card-title'>[POST-TITLE]</h2>
+              <img class='card-img-top' src='[POST-IMAGE]' alt='Card image cap'>
+              <div class='card-body'>
+                <p class='card-text'>[POST-MESSAGE]</p>
+              </div>
+              <div class='card-footer text-muted'>
+                [POST-DATE]
+              </div>
+            </div>";
             foreach($lista as $index => $item){
                 $currentPost = $post;
                 $currentPost = str_replace("[POST-IMAGE]", $item->image, $currentPost);

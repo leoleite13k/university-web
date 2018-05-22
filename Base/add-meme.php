@@ -32,7 +32,7 @@
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="add-meme.php">Postar</a>
+              <a class="nav-link" href="#">Postar</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="head-football.php">Head Football</a>
