@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="./images/facao.png" >
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./toasty/toasty.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   </head>
 
@@ -20,7 +21,7 @@
   </header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Quero Ver!</a>
+      <a class="navbar-brand" id="toasty-button" href="#">Quero Ver!</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,7 +46,16 @@
     </div>
   </nav>
 
-  
+  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="./toasty/jquery.toasty.js"></script>
+  <script>
+      $(document).ready( function(){
+          $("body").toasty();
+          $("#toasty-button").click( function(){
+               $("body").toasty('pop');
+          });
+      });
+  </script>
   </body>
 
 </html>
