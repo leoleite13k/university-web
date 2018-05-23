@@ -1,12 +1,26 @@
 <?php 
+date_default_timezone_set('Etc/GMT+3');
+setlocale(LC_TIME, "pt_BR");
 
- function login(){
-     
-            if(isset($_POST['usuario']) && isset($_POST['senha'])){
+$dia = strftime('%d');
+$mes = strftime('%m');
+$ano = strftime('%G');
+
+$hora    = strftime('%H');
+$minuto  = strftime('%M');
+$segundo = strftime('%S');
+
+
+$data = $dia . "/" . $mes . "/" . $ano;
+$tempo = $hora . ":" . $minuto . ":" . $segundo;
+
+ function postar(){
+            if(isset($_POST['titulo']) && isset($_POST['mensagem'])  && isset($_POST['arquivo'])){
                 
-                $user = $_POST['usuario'];
-                $passwd = $_POST['senha'];
-                
+                $titulo   = $_POST['titulo'];
+                $mensagem = $_POST['mensagem'];
+                $arquivo  = $_POST['arquivo'];
+  
             }else {
                 
                 return;
@@ -19,7 +33,7 @@
          
          $row = mysqli_fetch_row(consulta());
          
-         if(($user == $row[1]) && ($passwd == $row[2])){
+         if(($titulo == $row[2]) && ($mensagem == $row[3]) && ($arquivo == $row[4]) && ($data == $row[5]) && ($tempo == $row[6])){
              
              return true;
          }else{
@@ -33,15 +47,6 @@
          die("Falha na conexão!!! " . mysqli_connect_errno());
          
      }
-     
-                
-                
-                
-                                        
-                                    //    include "funcionalidades.php";
  }
      
- 
-
-
 ?>

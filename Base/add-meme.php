@@ -1,3 +1,7 @@
+<?php 
+    require "funcoes.php";
+    require "database.php";
+?>
 <!DOCTYPE html>
 <html lang="pt_BR">
 <title>
@@ -53,15 +57,15 @@
                   <div class="get-in-touch">
                       <h3 class="text-center">Capricha no Post</h3>
                       <div class="form-group">
-                          <input type="text" class="form-control" id="title" placeholder="Titulo" required/>
+                          <input type="text" class="form-control" id="titulo" placeholder="Titulo" required/>
                       </div>
                       <div class="form-group">
-                        <textarea class="form-control" id="message" rows="3" placeholder="Mensagem" required></textarea>
+                        <textarea class="form-control" id="menssagem" rows="3" placeholder="Mensagem" required></textarea>
                       </div>
                       <div class="form-group">
-                          <input type="file" class="form-control btn btn-info" id="image" placeholder="Imagem" required/>
+                          <input type="file" class="form-control btn btn-info" id="arquivo" placeholder="Arquivo" required/>
                       </div>
-                      <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Enviar!</a>
+                      <a href="index.php" class="btn btn-danger btn-sm btn-block" role="button">Enviar!</a>
                   </div>
                   </form>
               </div>
