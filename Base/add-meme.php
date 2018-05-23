@@ -45,13 +45,12 @@
       </div>
     </nav>
 
-      <div class="container">
-          <div class="row">
+      <div class="container container-form">
+          <div class="row row-form">
               <div class="col-mid-4">
                   <form action="#" method="post" class="form">
                   <div class="get-in-touch">
-                      <h3 class="text-center">
-                          Get in Touch</h3>
+                      <h3 class="text-center">Capricha no Post</h3>
                       <div class="form-group">
                           <input type="text" class="form-control" id="title" placeholder="Titulo" required/>
                       </div>
@@ -59,9 +58,9 @@
                         <textarea class="form-control" id="message" rows="3" placeholder="Mensagem" required></textarea>
                       </div>
                       <div class="form-group">
-                          <input type="file" class="form-control" id="image" placeholder="Imagem" required/>
+                          <input type="file" class="form-control btn btn-info" id="image" placeholder="Imagem" required/>
                       </div>
-                      <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Send it!</a>
+                      <a href="http://www.jquery2dotnet.com" class="btn btn-danger btn-sm btn-block" role="button">Enviar!</a>
                   </div>
                   </form>
               </div>

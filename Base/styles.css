@@ -7,3 +7,19 @@
     width: 100%;
     text-align: center;
 }
+
+.container-form{
+    border: 0;
+    margin: 0;
+    display: block;
+    position: absolute;
+    left: calc(50% - 270px);
+    max-width: 540px;
+}
+
+.row-form{
+    width: auto;
+    position: relative;
+    display: block;
+    margin: 0;
+}
