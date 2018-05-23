@@ -23,3 +23,18 @@
     display: block;
     margin: 0;
 }
+
+.about-content{
+   display: block;
+   border: 2px solid #275079;
+   border-radius: 8px;
+   margin: 16px;
+   padding: 12px;
+   max-width: 540px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.figure , .figure img{
+    width: 100%;
+}

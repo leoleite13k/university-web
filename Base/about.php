@@ -45,7 +45,15 @@
       </div>
     </div>
   </nav>
-
+  <br/>
+  <div class="about-content">
+    Site para fins acadêmicos desenvolvido pela equipe com os seguintes integrantes:
+    <ul>
+      <li>Gabriel Angelo Dragoni <a>87230</a></li>
+      <li>Victor Koschel <a>72946</a></li>
+      <li>Leonardo Leite <a>RA AQUI VIADO</a></li>
+    </ul>
+  </div>
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="./toasty/jquery.toasty.js"></script>
   <script>
