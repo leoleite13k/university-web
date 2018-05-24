@@ -18,12 +18,12 @@ function conectar(){
 
     function buscarPosts() {
         $conecta = conectar();
-        $busca = 'SELECT idPost, titulo, mensagem, arquivo, data FROM querover';
-        $resultado = mysqli_query($conexao, $busca);
+        $busca = 'SELECT idPost, titulo, mensagem, arquivo, data FROM postar';
+        $resultado = mysqli_query($conecta, $busca);
         $posts = array();
-
-        while ($posts = mysqli_fetch_assoc($resultado)) {
-            $posts[] = $posts;
+        
+        while ($post = mysqli_fetch_assoc($resultado)) {
+            $posts[] = $post;
         }
         return $posts;
     }
@@ -65,11 +65,10 @@ function criarPost($titulo, $mensagem) {
         if($conecta && isset($_FILES['arquivo'])) {
                 
             $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
-            $novo_nome = md5(time()) . $extensao;
-            $diretorio = "posts/";
+            $novo_nome = md5(time()).'.'.$extensao;
+            $diretorio = "./posts/";
             
             move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
-            
             $criaPost = "INSERT INTO postar(idPost,titulo,mensagem,arquivo,data) VALUES (null, '$titulo','$mensagem','$novo_nome',NOW())";
             
             $cadastro = mysqli_query($conecta,$criaPost);

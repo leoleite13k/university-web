@@ -63,58 +63,15 @@
           </h1>
         
         <?php
-          /***************************************************************************************************/
-          /* JAPONEIS é aqui que vc vai mexer, pegar a carga do banco e transformar nesses objetos da $lista */
-          /***************************************************************************************************/
-            
             session_start();
-            function carregaPosts() {
-                $postsBanco = buscarPosts();
-                
-                foreach ($postsBanco as $posts) {
-                    postaPosts($titulo['titulo'], $mensagem['mensagem'],$arquivo['arquivo'],$data['data']);
-                    
-                    
-                }
-            }
-            
-            function postaPosts ($titulo, $mensagem, $arquivo, $data) {
-                
-            }
-   
-            
-            $lista = [
-                    (object)[
-                    'title' => '$titulo',
-                    'date' => '$data',
-                    'message' => '$mensagem',
-                    'image' => '$arquivo',
-                    ],
-                    (object)[
-                    'title' => 'Segundo post top',
-                    'date' => "11/12/2017",
-                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Copo furadis é disculpa de bebadis, arcu quam euismod magna. Suco de cevadiss deixa as pessoas mais interessantis. Quem manda na minha terra sou euzis! Viva Forevis aptent taciti sociosqu ad litora torquent.',
-                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
-                    ],
-                    (object)[
-                    'title' => 'fsdf gdsdg ',
-                    'date' => "11/12/2017",
-                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Manduma pindureta quium dia nois paga. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget.',
-                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
-                    ],
-                    (object)[
-                    'title' => 'Zeldinha top (Imagem em base 64)',
-                    'date' => "11/12/2017",
-                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Manduma pindureta quium dia nois paga.',
-                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
-                    ],
-                    (object)[
-                    'title' => 'Ultimo Post',
-                    'date' => "11/12/2017",
-                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Mais vale um bebadis conhecidiss, que um alcoolatra anonimis. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Mé faiz elementum girarzis, nisi eros vermeio.',
-                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
-                    ],
-                ];
+            $postsBanco = buscarPosts();
+
+            function date_compare($a, $b){
+                $t1 = strtotime($a['data']);
+                $t2 = strtotime($b['data']);
+                return $t2 - $t1;
+            }    
+            usort($postsBanco, 'date_compare');
 
             $post = "
             <div class='card mb-4'>
@@ -127,12 +84,12 @@
                 [POST-DATE]
               </div>
             </div>";
-            foreach($lista as $index => $item){
+            foreach($postsBanco as $item){
                 $currentPost = $post;
-                $currentPost = str_replace("[POST-IMAGE]", $item->image, $currentPost);
-                $currentPost = str_replace("[POST-TITLE]", $item->title, $currentPost);
-                $currentPost = str_replace("[POST-MESSAGE]", $item->message, $currentPost);
-                $currentPost = str_replace("[POST-DATE]", $item->date, $currentPost);
+                $currentPost = str_replace("[POST-IMAGE]", './posts/'.$item['arquivo'], $currentPost);
+                $currentPost = str_replace("[POST-TITLE]", $item['titulo'], $currentPost);
+                $currentPost = str_replace("[POST-MESSAGE]", $item['mensagem'], $currentPost);
+                $currentPost = str_replace("[POST-DATE]", $item['data'], $currentPost);
                 echo $currentPost;
             }
         ?>
@@ -153,7 +110,7 @@
         <div class="col-md-4">
 
           <!-- Search Widget -->
-          <div class="card my-4">
+          <!-- <div class="card my-4">
             <h5 class="card-header">Buscar</h5>
             <div class="card-body">
               <div class="input-group">
@@ -163,7 +120,7 @@
                 </span>
               </div>
             </div>
-          </div>    
+          </div>     -->
 
           <!-- Side Widget -->
           <div class="card my-4">

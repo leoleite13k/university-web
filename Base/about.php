@@ -52,11 +52,12 @@
     Site para fins acadêmicos desenvolvido pela equipe com os seguintes integrantes:
     <ul>
       <li>Gabriel Angelo Dragoni <a>87230</a></li>
-      <li>Victor Koschel <a>72946</a></li>
       <li>Leonardo Leite <a>87839</a></li>
+      <li>Victor Koschel <a>72946</a></li>
     </ul>
   </div>
-  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
   <script src="./toasty/jquery.toasty.js"></script>
   <script>
       $(document).ready( function(){
