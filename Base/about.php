@@ -14,11 +14,13 @@
   </head>
 
   <body>
-  <header class="cabecalho">
-      <figure class="figure">
-          <img class="figure-img img-fluid rounded" src="images/baner-querover.png" alt="logotipo">
-      </figure>
-  </header>
+      
+    <header class="cabecalho">
+        <figure class="figure">
+            <img class="figure-img img-fluid rounded" src="./images/querover.png" alt="logotipo">
+        </figure>
+    </header>
+      
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" id="toasty-button" href="#">Quero Ver!</a>

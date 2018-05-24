@@ -83,4 +83,14 @@ function criarPost($titulo, $mensagem) {
     }
 }
 
+function mostrarPost($titulo, $mensagem) {
+    
+    
+    
+    
+    
+}
+
+
+
 ?>
