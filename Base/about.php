@@ -16,7 +16,7 @@
   <body>
   <header class="cabecalho">
       <figure class="figure">
-          <img class="figure-img img-fluid rounded" src="https://picsum.photos/4016/800?image=901" alt="logotipo">
+          <img class="figure-img img-fluid rounded" src="images/baner-querover.png" alt="logotipo">
       </figure>
   </header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -51,7 +51,7 @@
     <ul>
       <li>Gabriel Angelo Dragoni <a>87230</a></li>
       <li>Victor Koschel <a>72946</a></li>
-      <li>Leonardo Leite <a>RA AQUI VIADO</a></li>
+      <li>Leonardo Leite <a>87839</a></li>
     </ul>
   </div>
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>

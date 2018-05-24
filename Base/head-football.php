@@ -16,7 +16,7 @@
   <body>
   <header class="cabecalho">
         <figure class="figure">
-            <img class="figure-img img-fluid rounded" src="https://picsum.photos/4016/800?image=901" alt="logotipo">
+            <img class="figure-img img-fluid rounded" src="images/baner-querover.png" alt="logotipo">
         </figure>
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
