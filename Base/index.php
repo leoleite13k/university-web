@@ -66,12 +66,29 @@
           /***************************************************************************************************/
           /* JAPONEIS é aqui que vc vai mexer, pegar a carga do banco e transformar nesses objetos da $lista */
           /***************************************************************************************************/
+            
+            session_start();
+            function carregaPosts() {
+                $postsBanco = buscarPosts();
+                
+                foreach ($postsBanco as $posts) {
+                    postaPosts($titulo['titulo'], $mensagem['mensagem'],$arquivo['arquivo'],$data['data']);
+                    
+                    
+                }
+            }
+            
+            function postaPosts ($titulo, $mensagem, $arquivo, $data) {
+                
+            }
+   
+            
             $lista = [
                     (object)[
-                    'title' => 'Post da coruja ',
-                    'date' => "11/12/2017",
-                    'message' => 'Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Casamentiss faiz malandris se pirulitá. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Detraxit consequat et quo num tendi nada.',
-                    'image' => 'https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/68dd54ca-60cf-4ef7-898b-26d7cbe48ec7/10-dithering-opt.jpg',
+                    'title' => '$titulo',
+                    'date' => '$data',
+                    'message' => '$mensagem',
+                    'image' => '$arquivo',
                     ],
                     (object)[
                     'title' => 'Segundo post top',

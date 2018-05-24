@@ -16,24 +16,37 @@ function conectar(){
     return $conecta;
 }
 
-function consulta(){
+    function buscarPosts() {
+        $conecta = conectar();
+        $busca = 'SELECT idPost, titulo, mensagem, arquivo, data FROM querover';
+        $resultado = mysqli_query($conexao, $busca);
+        $posts = array();
+
+        while ($posts = mysqli_fetch_assoc($resultado)) {
+            $posts[] = $posts;
+        }
+        return $posts;
+    }
+
+/*
+function mostrarPost(){
     
     $conecta = conectar();
     
     if($conecta){
         
-        $pesquisa = "SELECT * FROM postar;";
+        $pesquisa = "SELECT * FROM postar WHERE idPost != Null AND arquivo != Null;";
         
-        $consulta = mysqli_query($conecta,$pesquisa);
+        $mostrarPost = mysqli_query($conecta,$pesquisa);
         
-        return $consulta;
+        return $mostrarPost;
 
     }else{
         
         die("Não foi possivel conectar!!!" . mysqli_connect_errno());   
     }
 }
-
+*/
 
 function criarPost($titulo, $mensagem) {
     
@@ -82,15 +95,6 @@ function criarPost($titulo, $mensagem) {
         return;
     }
 }
-
-function mostrarPost($titulo, $mensagem) {
-    
-    
-    
-    
-    
-}
-
 
 
 ?>
