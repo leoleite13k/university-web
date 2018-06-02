@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" id="toasty-button" href="#">Home
+              <a class="nav-link" id="toasty-button" href="index.php">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -61,11 +61,10 @@
           <h1 class="my-4">Vai descendo
             <small> devagarinho</small>
           </h1>
-        
         <?php
             session_start();
             $postsBanco = buscarPosts();
-
+            
             function date_compare($a, $b){
                 $t1 = strtotime($a['data']);
                 $t2 = strtotime($b['data']);
@@ -89,39 +88,31 @@
                 $currentPost = str_replace("[POST-IMAGE]", './posts/'.$item['arquivo'], $currentPost);
                 $currentPost = str_replace("[POST-TITLE]", $item['titulo'], $currentPost);
                 $currentPost = str_replace("[POST-MESSAGE]", $item['mensagem'], $currentPost);
-                $currentPost = str_replace("[POST-DATE]", $item['data'], $currentPost);
+                $currentPost = str_replace("[POST-DATE]", date('d/m/Y H:i:s', strtotime($item['data'])), $currentPost);
                 echo $currentPost;
             }
         ?>
-
-          <!-- Pagination -->
-          <!-- <ul class="pagination justify-content-center mb-4">
-            <li class="page-item">
-              <a class="page-link" href="#">&larr; Older</a>
-            </li>
-            <li class="page-item disabled">
-              <a class="page-link" href="#">Newer &rarr;</a>
-            </li>
-          </ul> -->
-
+            
         </div>
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
-
+            
           <!-- Search Widget -->
-          <!-- <div class="card my-4">
-            <h5 class="card-header">Buscar</h5>
-            <div class="card-body">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Escreve aí...">
-                <span class="input-group-btn">
-                  <button class="btn btn-secondary" type="button">Bora!</button>
-                </span>
-              </div>
-            </div>
-          </div>     -->
-
+          <div class="card my-4">
+                <h5 class="card-header">Buscar</h5>
+                <div class="card-body">
+                  <div class="input-group">
+                    <form action="index.php" method="get">
+                        <input type="text" name="pesquisa" class="form-control" placeholder="Escreve aí...">
+                        <span class="input-group-btn">                  
+                            <input class="btn btn-secondary" type="submit"  value="Bora!"> 
+                        </span>  
+                    </form>
+                  </div>
+                </div>
+          </div>
+            
           <!-- Side Widget -->
           <div class="card my-4">
             <h5 class="card-header">É Facão</h5>
@@ -149,7 +140,7 @@
             $("body").toasty();
             $("#toasty-button").click( function(){
                  $("body").toasty('pop');
-            });
+            });   
         });
     </script>
 </body>

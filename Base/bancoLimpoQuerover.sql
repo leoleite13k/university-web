@@ -26,13 +26,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   PRIMARY KEY (`idPost`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
--- Dumping data for table querover.posts: ~2 rows (approximately)
-/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` (`idPost`, `titulo`, `mensagem`, `arquivo`, `data`) VALUES
-	(1, 'Teste1', 'Testando Neymito !', '348ef4910d7a2c90f3677012cd109c13..jpg', '2018-06-02 15:25:51'),
-	(2, 'HuehuehueBR', 'Acabou a gasolina heuheuheuheu!', 'd65e578a60540b78d6c1caa47d2746e2..jpg', '2018-06-02 15:26:15');
-/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
-
+-- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

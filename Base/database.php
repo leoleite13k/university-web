@@ -18,7 +18,13 @@ function conectar(){
 
     function buscarPosts() {
         $conecta = conectar();
-        $busca = 'SELECT idPost, titulo, mensagem, arquivo, data FROM postar';
+        $busca = 'SELECT * FROM posts ';
+        
+        if( isset ($_GET["pesquisa"])) {
+            $pesquisaPost = $_GET["pesquisa"];
+            $busca .= "WHERE titulo LIKE '%{$pesquisaPost}%' OR mensagem LIKE '%{$pesquisaPost}%' OR data LIKE '%{$pesquisaPost}%'";   
+        }
+        
         $resultado = mysqli_query($conecta, $busca);
         $posts = array();
         
@@ -28,72 +34,51 @@ function conectar(){
         return $posts;
     }
 
-/*
-function mostrarPost(){
-    
-    $conecta = conectar();
-    
-    if($conecta){
-        
-        $pesquisa = "SELECT * FROM postar WHERE idPost != Null AND arquivo != Null;";
-        
-        $mostrarPost = mysqli_query($conecta,$pesquisa);
-        
-        return $mostrarPost;
+    function criarPost($titulo, $mensagem) {
 
-    }else{
-        
-        die("Não foi possivel conectar!!!" . mysqli_connect_errno());   
-    }
-}
-*/
+        if(isset($_POST['titulo'])) {
+            if(isset($_POST['mensagem'])) {
 
-function criarPost($titulo, $mensagem) {
-    
-    if(isset($_POST['titulo'])) {
-        if(isset($_POST['mensagem'])) {
-            
-            $titulo   = $_POST['titulo'];
-            $mensagem = $_POST['mensagem'];
-        } 
-        else {    
-            return;
-        }
-        
-        $conecta = conectar();
-        
-        if($conecta && isset($_FILES['arquivo'])) {
-                
-            $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
-            $novo_nome = md5(time()).'.'.$extensao;
-            $diretorio = "./posts/";
-            
-            move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
-            $criaPost = "INSERT INTO postar(idPost,titulo,mensagem,arquivo,data) VALUES (null, '$titulo','$mensagem','$novo_nome',NOW())";
-            
-            $cadastro = mysqli_query($conecta,$criaPost);
-  
-            if($cadastro){
-                echo "<script>
-                            alert('Meme {$titulo} enviado com sucesso!!!');
-                            location.href='index.php';
-                      </script>";
+                $titulo   = $_POST['titulo'];
+                $mensagem = $_POST['mensagem'];
+            } 
+            else {    
+                return;
+            }
+
+            $conecta = conectar();
+
+            if($conecta && isset($_FILES['arquivo'])) {
+
+                $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
+                $novo_nome = md5(time()).'.'.$extensao;
+                $diretorio = "./posts/";
+
+                move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio.$novo_nome);
+                $criaPost = "INSERT INTO posts(idPost,titulo,mensagem,arquivo,data) VALUES (null, '$titulo','$mensagem','$novo_nome',NOW())";
+
+                $cadastro = mysqli_query($conecta,$criaPost);
+
+                if($cadastro){
+                    echo "<script>
+                                alert('Meme {$titulo} enviado com sucesso!!!');
+                                location.href='index.php';
+                          </script>";
+                }
+                else {
+                    $erro = mysqli_connect_errno();
+                    echo "<script> 
+                                alert('Falha ao enviar Meme ! ' + '{$erro}');                
+                          </script>";
+                }
             }
             else {
-                $erro = mysqli_connect_errno();
-                echo "<script> 
-                            alert('Falha ao enviar Meme ' + '{$erro}');                
-                      </script>";
+                return false;
             }
         }
         else {
-            return false;
+            return;
         }
     }
-    else {
-        return;
-    }
-}
-
 
 ?>
