@@ -99,19 +99,19 @@
         <div class="col-md-4">
             
           <!-- Search Widget -->
+        <form action="index.php" method="get">
           <div class="card my-4">
-                <h5 class="card-header">Buscar</h5>
-                <div class="card-body">
-                  <div class="input-group">
-                    <form action="index.php" method="get">
-                        <input type="text" name="pesquisa" class="form-control" placeholder="Escreve aí...">
-                        <span class="input-group-btn">                  
-                            <input class="btn btn-secondary" type="submit"  value="Bora!"> 
-                        </span>  
-                    </form>
-                  </div>
-                </div>
+            <h5 class="card-header">Buscar</h5>
+            <div class="card-body">
+              <div class="input-group">
+                    <input type="text" name="pesquisa" class="form-control" placeholder="Escreve aí...">
+                    <span class="input-group-btn">                  
+                        <input class="btn btn-secondary" type="submit"  value="Bora!"> 
+                    </span>  
+              </div>
+            </div>
           </div>
+        </form>
             
           <!-- Side Widget -->
           <div class="card my-4">
